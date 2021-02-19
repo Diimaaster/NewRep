@@ -1,5 +1,6 @@
 package com.example.notes;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -35,8 +36,20 @@ public class Zametky extends Fragment {
             TextView textView = new TextView(linearLayout.getContext());
             textView.setText(name);
             textView.setTextSize(60f);
+            final int index = 1;
+            textView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startFragment(index);
+                }
+            });
             linearLayout.addView(textView);
+
         }
     }
 
+    private void startFragment(int index){
+        Intent intent = new Intent(getActivity(),InfoZametok.class);
+        intent.putExtra(InfoZametok.ARG_INDEX,index);
+    }
 }
