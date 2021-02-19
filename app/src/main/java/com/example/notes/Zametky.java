@@ -34,31 +34,9 @@ public class Zametky extends Fragment {
             String name = array[i];
             TextView textView = new TextView(linearLayout.getContext());
             textView.setText(name);
-            textView.setTextSize(30f);
+            textView.setTextSize(60f);
             linearLayout.addView(textView);
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
