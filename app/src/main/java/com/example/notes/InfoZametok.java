@@ -26,6 +26,7 @@ public class InfoZametok extends Fragment {
 
    private TextView textView;
 
+
    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState){
        super.onViewCreated(view,savedInstanceState);
@@ -38,8 +39,8 @@ public class InfoZametok extends Fragment {
         if(getArguments() != null){
             int index = getArguments().getInt(ARG_INDEX);
             TypedArray array = getResources().obtainTypedArray(R.array.info);
-            int textid = array.getResourceId(index,0);
-            textView.setText(textid);
+            int tented = array.getResourceId(index,0);
+            textView.setText(tented);
         }
     }
 }

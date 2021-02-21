@@ -40,16 +40,32 @@ public class Zametky extends Fragment {
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startFragment(index);
+                    startActivity(index);
                 }
             });
             linearLayout.addView(textView);
 
         }
     }
+    private void openInfoFragment(int index){
+        InfoZametok fragment = InfoZametok.newInstance(index);
+        requireActivity().getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.layout_container, fragment)
+                .commit();
+    }
 
-    private void startFragment(int index){
-        Intent intent = new Intent(getActivity(),InfoZametok.class);
+//    private void checkOrientation(int index){
+//      if (isLandscapeOrienation){
+//          openInfoFragment(index);
+//      }else{
+//          startActivity(index);
+//      }
+//    }
+
+    private void startActivity(int index){
+        Intent intent = new Intent(getActivity(),InfoActivity.class);
         intent.putExtra(InfoZametok.ARG_INDEX,index);
+        startActivity(intent);
     }
 }
